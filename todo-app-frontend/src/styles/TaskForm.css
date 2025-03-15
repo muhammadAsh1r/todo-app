@@ -1,0 +1,94 @@
+.task-form-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centers the form perfectly */
+  width: 90%;
+  max-width: 400px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 1000;
+}
+
+/* Form Title */
+.task-form-title {
+  font-size: 22px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Labels */
+.task-form-label {
+  display: block;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 6px;
+  text-align: left;
+}
+
+/* Inputs and Textarea */
+.task-form-input,
+.task-form-textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.task-form-input:focus,
+.task-form-textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Textarea Styling */
+.task-form-textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+/* Submit Button */
+.task-form-button {
+  width: 100%;
+  background: #ff5733;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.task-form-button:hover {
+  background: #e64a19;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .task-form-container {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .task-form-title {
+    font-size: 20px;
+  }
+
+  .task-form-input,
+  .task-form-textarea {
+    font-size: 14px;
+  }
+
+  .task-form-button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}

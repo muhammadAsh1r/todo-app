@@ -1,0 +1,82 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  background-color: rgb(247, 182, 97);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 95vw;
+}
+
+.header__left-title {
+  color: white;
+  font-size: 24px;
+  font-family: "Arial", sans-serif;
+  font-weight: 600;
+}
+
+.header__right-button {
+  background-color: white;
+  border: none;
+  padding: 10px 20px;
+  color: rgb(247, 182, 97);
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.header__right-button:hover {
+  background-color: rgb(247, 182, 97);
+  color: white;
+  transform: scale(1.05);
+  border: 2px solid white;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0 20px;
+  }
+
+  .header__left-title {
+    font-size: 20px;
+  }
+
+  .header__right-button {
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    flex-direction: row;
+    align-items: center;
+    padding: 15px;
+    border-radius: none;
+    width: 100vw;
+  }
+
+  .header__left-title {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .header__right-button {
+    padding: 10px 18px;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Ensure Button Style Reset when Screen Size Returns to Larger */
+@media (min-width: 481px) {
+  .header__right-button {
+    padding: 10px 20px; /* Reset padding */
+    font-size: 14px; /* Reset font size */
+    width: auto; /* Remove full width on mobile */
+    margin-top: 0; /* Reset margin-top */
+  }
+}

@@ -1,0 +1,104 @@
+/* Main Container */
+.task-list-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    /* background-color: #f8f9fa; */
+}
+
+/* Task Filter Dropdown */
+.task-filter {
+    width: 100%;
+    max-width: 200px;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.task-filter:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+/* Task Items Container */
+.task-items {
+    display: flex;
+    flex-direction: column; /* Stack tasks vertically */
+    gap: 20px;
+    width: 100%;
+    align-items: center; /* Center tasks horizontally */
+}
+
+/* Task Item Styling */
+.task-item {
+    width: 90%; /* Task width set to 90% */
+    max-width: 600px; /* Prevent task from growing too large */
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.task-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.task-item h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.task-item p {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.task-item button {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.task-item button:hover {
+    background-color: #0056b3;
+}
+
+/* Task Checkbox */
+.task-item input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .task-list-container {
+        padding: 15px;
+    }
+
+    .task-filter {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .task-items {
+        gap: 15px;
+    }
+
+    .task-item {
+        width: 95%; /* Task takes up more width on smaller screens */
+        max-width: 600px;
+    }
+}

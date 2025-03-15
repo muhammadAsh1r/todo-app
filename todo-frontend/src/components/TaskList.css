@@ -1,0 +1,148 @@
+/* Light Theme Colors */
+:root {
+  --background-color: #ffffff; /* White */
+  --primary-color: #007bff; /* Blue */
+  --accent-color: #0056b3; /* Darker Blue */
+  --text-color: #000000; /* Black */
+  --task-bg: #f0f8ff; /* Light Blue */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  background-color: var(--background-color);
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main container */
+.task-container {
+  width: 100vw;
+  height: 100vh;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header */
+.task-header {
+  color: var(--text-color);
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+/* Task List */
+.task-list {
+  width: 90%;
+  max-width: 1400px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Task Item */
+.task-item {
+  background: var(--task-bg);
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.task-item.completed {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+/* Task Info */
+.task-info {
+  flex: 1;
+}
+
+.task-title {
+  color: var(--primary-color);
+  font-size: 22px;
+}
+
+.task-desc {
+  color: var(--text-color);
+  font-size: 16px;
+}
+
+/* Task Actions */
+.task-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Checkbox */
+.task-checkbox {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--accent-color);
+}
+
+/* Buttons */
+.task-btn {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.update-btn {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+}
+
+.remove-btn {
+  background-color: red;
+  color: var(--text-color);
+}
+
+/* Button Hover Effects */
+.task-btn:hover {
+  opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .task-container {
+    padding: 20px;
+  }
+
+  .task-header {
+    font-size: 24px;
+  }
+
+  .task-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .task-actions {
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+}

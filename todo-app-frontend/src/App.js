@@ -70,7 +70,7 @@ const App = () => {
   const handleUpdate = task => {
     axios.put(`http://localhost:5000/api/tasks/${task._id}`, task)
       .then(response => {
-        let indexOfTaskToUpdate = tasks.findIndex(t => t.id === task.id)
+        let indexOfTaskToUpdate = tasks.findIndex(t => t._id === task._id)
         let updatedTasks = [...tasks];
         updatedTasks[indexOfTaskToUpdate].title = task.title;
         updatedTasks[indexOfTaskToUpdate].description = task.description;

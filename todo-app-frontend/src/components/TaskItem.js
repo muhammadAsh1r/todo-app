@@ -1,37 +1,23 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import TaskForm from './TaskForm';
 
 const TaskItem = ({ id, title, description, isCompleted, removeTask, onUpdate, toggleCheck }) => {
-    const [checked, setChecked] = useState(isCompleted);
     const [isUpdating, setIsUpdating] = useState(false);
 
-    const handleRemove = () => {
-        removeTask(id)
-    };
-
-    const handleUpdate = (task) => {
-        onUpdate(task);
-        setIsUpdating(false);
-    }
-
     return (
-        <li>
-            <h2>{title}</h2>
-            <p>{description}</p>
-            <input type='checkbox' checked={checked} onChange={e => setChecked(!checked)} onClick={() => toggleCheck(id)} />
-            <button onClick={() => setIsUpdating(true)}>UPDATE</button>
-            <button onClick={handleRemove}>X</button>
-            {isUpdating &&
-                <TaskForm
-                    updating={isUpdating}
-                    onAdd={handleUpdate}
-                    defaultTitle={title}
-                    defaultDescription={description}
-                    defaultId={id}
-                    isCompleted={checked} />
-            }
+        <li className="task-item">
+            <div className="task-content">
+                <h2>{title}</h2>
+                <p>{description}</p>
+            </div>
+            <div className="task-actions">
+                <input type="checkbox" checked={isCompleted} onChange={() => toggleCheck(id)} />
+                <button onClick={() => setIsUpdating(true)}>UPDATE</button>
+                <button onClick={() => removeTask(id)}>X</button>
+            </div>
+            {isUpdating && <TaskForm updating onAdd={onUpdate} defaultTitle={title} defaultDescription={description} defaultId={id} isCompleted={isCompleted} />}
         </li>
-    )
-}
+    );
+};
 
-export default TaskItem
+export default TaskItem;

@@ -44,7 +44,7 @@
 
 import React, { useState } from "react";
 import TaskForm from "./TaskForm";
-import { Card, CardContent, Typography, Checkbox, IconButton, Box, Paper } from "@mui/material";
+import { CardContent, Typography, Checkbox, IconButton, Box, Paper } from "@mui/material";
 import { Edit, Delete } from "@mui/icons-material";
 
 const TaskItem = ({ id, title, description, isCompleted, removeTask, onUpdate, toggleCheck }) => {

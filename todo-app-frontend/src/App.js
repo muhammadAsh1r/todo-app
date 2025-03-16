@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
 import TaskList from "./components/TaskList";
@@ -85,7 +85,6 @@ const App = () => {
   };
 
   return (
-    // <Router>
     <React.Fragment>
       <Header />
       <Routes>
@@ -94,7 +93,6 @@ const App = () => {
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </React.Fragment>
-    // </Router>
   );
 };
 

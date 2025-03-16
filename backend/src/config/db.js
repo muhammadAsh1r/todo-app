@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const connectDB = async () => {
     try {
-        await mongoose.connect("Your connection string here", {
+        await mongoose.connect("mongodb+srv://ashir:ashir123@cluster0.zlena.mongodb.net/todo-app", {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
